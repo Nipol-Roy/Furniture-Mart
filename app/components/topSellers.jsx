@@ -1,7 +1,7 @@
 /** @format */
 
 import data from "../../public/data/data";
-import CardCrasoule from "./cardCrasoule";
+import CardCrasoule from "./CardCrasoule";
 
 const TopSellers = () => {
   const cards = data.Products.slice(18, 29).map((item) => ({
