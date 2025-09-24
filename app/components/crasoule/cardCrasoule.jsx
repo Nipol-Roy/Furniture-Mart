@@ -35,13 +35,25 @@ const CardCrasoule = ({ title, cards }) => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024, // <= 1024px
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 640, // <= 640px
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
         },
