@@ -3,8 +3,8 @@
 "use client";
 import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import ProductCard from "../../app/components/cards";
 import data from "../../public/data/data";
+import ProductCard from "../components/crasoule/cards";
 
 const page = () => {
   const [showFilter, setShowFilter] = useState(false);

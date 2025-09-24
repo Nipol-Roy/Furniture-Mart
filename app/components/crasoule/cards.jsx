@@ -4,7 +4,7 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import { FaCheck } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../lib/cartSlice";
+import { addToCart, removeFromCart } from "../../lib/cartSlice";
 
 const Card = ({ id, image, text, price, category, inStock }) => {
   const dispatch = useDispatch();
