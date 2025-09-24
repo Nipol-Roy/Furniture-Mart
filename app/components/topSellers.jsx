@@ -4,17 +4,15 @@ import data from "../../public/data/data";
 import CardCrasoule from "./cardCrasoule";
 
 const TopSellers = () => {
-  const cards = data.Products.slice(18, 29).map((item) => ({
+  const products = data.Products || [];
+  const cards = products.slice(18, 29).map((item, index) => ({
+    id: index,
     image: item.image,
     text: item.text,
     price: `$${item.price}`,
   }));
 
-  return (
-    <div>
-      <CardCrasoule title="Top Sellers" cards={cards} />
-    </div>
-  );
+  return <CardCrasoule title="Top Sellers" cards={cards} />;
 };
 
 export default TopSellers;
