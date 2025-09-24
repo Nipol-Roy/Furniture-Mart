@@ -2,7 +2,7 @@
 
 // Move your data file from public/data/data.js to src/data/data.js (or app/data/data.js)
 import data from "../../public/data/data";
-import CardCrasoule from "./cardCrasoule";
+import CardCrasoule from "./cardCrasoule.jsx";
 
 const NewArrivals = () => {
   const products = data.Products || [];

@@ -1,7 +1,7 @@
 /** @format */
 
 import data from "../../public/data/data";
-import CardCrasoule from "./cardCrasoule";
+import CardCrasoule from "./cardCrasoule.jsx";
 
 const TopSellers = () => {
   const products = data.Products || [];
