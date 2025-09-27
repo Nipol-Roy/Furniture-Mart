@@ -8,7 +8,7 @@ const NextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
     className="absolute hidden sm:flex items-center justify-center
-     right-2 md:right-4 h-10 w-10 hover:scale-110 duration-300 cursor-pointer 
+     right-4 md:right-6 h-10 w-10 hover:scale-110 duration-300 cursor-pointer 
      top-1/2 -translate-y-1/2 z-40 text-gray-900 bg-white shadow-md rounded-full"
   >
     <i className="ri-arrow-right-wide-line text-2xl"></i>
@@ -18,7 +18,7 @@ const NextArrow = ({ onClick }) => (
 const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute hidden sm:flex items-center justify-center left-2 md:left-4 h-10 w-10 
+    className="absolute hidden sm:flex items-center justify-center left-4 md:left-6 h-10 w-10 
     hover:scale-110 duration-300 cursor-pointer top-1/2 -translate-y-1/2 z-40
      text-gray-900 bg-white shadow-md rounded-full"
   >
@@ -27,36 +27,30 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const CardCrasoule = ({ title, cards }) => {
-  let settings = {
-    infinite: false,
+  const settings = {
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-        },
+        settings: { slidesToShow: 4 },
       },
       {
         breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-        },
+        settings: { slidesToShow: 3 },
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
+        settings: { slidesToShow: 1 },
       },
     ],
   };

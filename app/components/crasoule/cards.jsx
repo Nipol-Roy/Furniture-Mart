@@ -5,16 +5,66 @@ import toast from "react-hot-toast";
 import { FaCheck } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../lib/cartSlice";
+import { addToWishlist, removeWishlist } from "../../lib/wishlistSlice";
 
 const Card = ({ id, image, text, price, category, inStock }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const isInCart = cartItems.some((item) => item.id === id);
 
-  const numericPrice =
+  const numberisPrice =
     typeof price === "string"
       ? parseFloat(price.replace("$", "")) || 0
       : Number(price) || 0;
+
+  const wishListItem = useSelector((state) => state.wishList.items);
+
+  const isInwishList = wishListItem.some((item) => item.id === id);
+
+  const handleWishlistToggle = () => {
+    if (isInwishList) {
+      dispatch(removeWishlist(id));
+      toast.success("Removed from cart", {
+        duration: 3000,
+        position: "bottom-center",
+        icon: <FaCheck className="text-white" />,
+        style: {
+          background: "#ef4444",
+          color: "#ffffff",
+          fontSize: "16px",
+          fontWeight: 600,
+          padding: " 12px 20px",
+          borderRadius: "6px",
+          transition: "opacity .3s ease",
+        },
+      });
+    } else {
+      dispatch(
+        addToWishlist({
+          id,
+          image,
+          text,
+          price: numberisPrice,
+          category,
+          inStock,
+        })
+      );
+      toast.success("Successfully Added To Cart", {
+        duration: 3000,
+        position: "bottom-center",
+        icon: <FaCheck className="text-white" />,
+        style: {
+          background: "#22c55e",
+          color: "#ffffff",
+          fontSize: "16px",
+          fontWeight: 600,
+          padding: " 12px 20px",
+          borderRadius: "6px",
+          transition: "opacity .3s ease",
+        },
+      });
+    }
+  };
 
   const handleToggleCart = () => {
     if (isInCart) {
@@ -39,7 +89,7 @@ const Card = ({ id, image, text, price, category, inStock }) => {
           id,
           image,
           text,
-          price: numericPrice,
+          price: numberisPrice,
           quantity: 1,
           category,
           inStock,
@@ -85,16 +135,21 @@ const Card = ({ id, image, text, price, category, inStock }) => {
             {category}
           </p>
           <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
-            ${numericPrice.toFixed(2)}
+            ${numberisPrice.toFixed(2)}
           </p>
         </div>
 
-        <div className="flex gap-2 sm:gap-3 text-gray-500">
-          <i className="ri-heart-fill text-lg sm:text-xl md:text-2xl cursor-pointer hover:text-red-500 transition-colors"></i>
+        <div className="flex gap-2 sm:gap-3 ">
           <i
-            className={`ri-shopping-cart-2-fill text-2xl cursor-pointer ${
+            className={`ri-heart-fill ${
+              isInwishList ? "text-red-500" : "text-gray-500 hover:text-red-600"
+            } transition-colors`}
+            onClick={handleWishlistToggle}
+          ></i>
+          <i
+            className={`ri-shopping-cart-2-fill text-lg sm:text-xl md:text-2xl cursor-pointer ${
               isInCart ? "text-green-500" : "text-gray-600 hover:text-green-500"
-            }`}
+            } transition-colors`}
             onClick={handleToggleCart}
           />
         </div>
@@ -102,5 +157,4 @@ const Card = ({ id, image, text, price, category, inStock }) => {
     </div>
   );
 };
-
 export default Card;

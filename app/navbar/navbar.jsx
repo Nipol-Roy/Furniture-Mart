@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import "remixicon/fonts/remixicon.css";
 
-const navbar = () => {
+const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.items);
@@ -14,15 +14,18 @@ const navbar = () => {
     0
   );
 
+  const wishlistItems = useSelector((state) => state.wishList.items);
+  const wishListItemsCount = wishlistItems.length;
+
   return (
-    <div className=" sticky z-99 top-0 bg-white rounded-lg ">
+    <div className=" sticky z-50 top-0 bg-white rounded-lg ">
       <div className="flex justify-between items-center px-2 py-4 ">
         <div className="text-2xl capitalize font-bold text-red-400">
           Furniture Mart
         </div>
 
         <div className="md:flex hidden  justify-center items-center gap-5 lg:gap-8 text-xl font-semibold">
-          <Link href="/ " className="text-[18px] lg:text-xl text-gray-900">
+          <Link href="/" className="text-[18px] lg:text-xl text-gray-900">
             Home
           </Link>
           <li className=" list-none text-[18px] lg:text-xl text-gray-900 ">
@@ -42,13 +45,18 @@ const navbar = () => {
 
         <div className="flex justify-center items-center md:gap-4 gap-2 lg:gap-5 ">
           <i className="ri-truck-fill text-2xl lg:text-3xl hover:text-red-500 cursor-pointer text-gray-900 "></i>
-          <Link href="/wishlist">
-            <i className="ri-heart-fill text-2xl lg:text-3xl hover:text-red-500 cursor-pointer text-gray-900 "></i>
+          <Link href="/wishlist" className="relative">
+            <i className="ri-heart-fill  text-2xl lg:text-3xl hover:text-red-500 cursor-pointer text-gray-900 "></i>
+            {wishListItemsCount > 0 && (
+              <span className="absolute -top-2 -right-3 text-xs text-white bg-[#a91f64] rounded-full px-1.5 py-0.5">
+                {wishListItemsCount}
+              </span>
+            )}
           </Link>
           <Link href="/cart" className="relative">
             <i className="ri-shopping-cart-2-fill text-2xl lg:text-3xl hover:text-red-500 cursor-pointer text-gray-900 "></i>
             {cartItemCount > 0 && (
-              <span className="absolute -top-3 -right-4 text-xs text-white bg-[#a91f64] rounded-full px-1.5 py-0.5">
+              <span className="absolute -top-2 -right-3 text-xs text-white bg-[#a91f64] rounded-full px-1.5 py-0.5">
                 {cartItemCount}
               </span>
             )}
@@ -105,4 +113,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
