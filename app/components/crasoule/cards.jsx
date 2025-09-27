@@ -141,7 +141,7 @@ const Card = ({ id, image, text, price, category, inStock }) => {
 
         <div className="flex gap-2 sm:gap-3 ">
           <i
-            className={`ri-heart-fill ${
+            className={`ri-heart-fill text-lg sm:text-xl md:text-2xl ${
               isInwishList ? "text-red-500" : "text-gray-500 hover:text-red-600"
             } transition-colors`}
             onClick={handleWishlistToggle}

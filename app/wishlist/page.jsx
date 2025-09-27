@@ -22,7 +22,7 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-12 px-4">
+    <div className="w-full max-w-7xl mx-auto  my-12 px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
         Wishlist
       </h2>
@@ -57,7 +57,6 @@ const Page = () => {
                   index < wishlist.length - 1 ? "border-b border-gray-300" : ""
                 }`}
               >
-                {/* Product Info */}
                 <div className="flex items-center gap-4 w-full sm:w-auto">
                   <div className="relative w-16 h-16 flex-shrink-0">
                     <Image
@@ -124,7 +123,7 @@ const Page = () => {
 
                     <MdDelete
                       onClick={() => removeItem(item.id)}
-                      className="hidden sm:block text-gray-500 hover:text-red-600 cursor-pointer text-lg md:text-2xl"
+                      className="hidden sm:block text-gray-500 hover:text-red-600 cursor-pointer text-lg md:text-2xl xl:text-3xl "
                     />
                   </div>
                 </div>
