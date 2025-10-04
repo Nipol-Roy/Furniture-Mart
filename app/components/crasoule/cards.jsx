@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../lib/cartSlice";
 import { addToWishlist, removeWishlist } from "../../lib/wishlistSlice";
 
-const Card = ({ id, image, text, price, category, inStock }) => {
+const Card = ({ id, image, text, price, category, instock }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const isInCart = cartItems.some((item) => item.id === id);
@@ -46,7 +46,7 @@ const Card = ({ id, image, text, price, category, inStock }) => {
           text,
           price: numberisPrice,
           category,
-          inStock,
+          instock,
         })
       );
       toast.success("Successfully Added To Cart", {
@@ -92,7 +92,7 @@ const Card = ({ id, image, text, price, category, inStock }) => {
           price: numberisPrice,
           quantity: 1,
           category,
-          inStock,
+          instock,
         })
       );
       toast.success("Successfully Added To Cart", {

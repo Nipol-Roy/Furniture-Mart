@@ -51,14 +51,14 @@ const CardPage = () => {
           bottom: "-40px",
         }}
       >
-        <ul className="flex justify-center transition-all   duration-500 items-center">
+        <ul className="flex justify-center gap-5 transition-all   duration-500 items-center">
           {" "}
           {dots}{" "}
         </ul>
       </div>
     ),
     customPaging: (i) => (
-      <div className="w-3 h-3 bg-gray-400 duration-500 rounded-full hover:bg-blue-500 transition"></div>
+      <div className="w-8 h-[6px] bg-gray-400 duration-500 rounded-full hover:bg-blue-500 transition"></div>
     ),
   };
   return (

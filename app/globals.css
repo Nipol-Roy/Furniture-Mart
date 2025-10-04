@@ -9,18 +9,15 @@
   scroll-behavior: smooth;
 }
 
-@layer base {
-  body {
-    @apply px-2 md:px-5 lg:px-20 xl:px-40 bg-slate-50;
-  }
+.slick-dots li.slick-active div {
+  @apply bg-red-400 transition-all ease-in-out duration-500 w-8 h-[6px] shadow-[0_1px_3px_0_rgba(0,0,0,0.25),0_1px_2px_-1px_rgba(0,0,0,0.25)];
 }
 
-.slick-dots li.slick-active div {
-  @apply bg-red-400 transition-all ease-in-out duration-500 w-6 h-3; /* active dot larger & blue */
-}
 .slick-slide > div {
-  margin: 0 10px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
 
 .slick-list {

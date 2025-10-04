@@ -10,6 +10,7 @@ const TopSellers = () => {
     image: item.image,
     text: item.text,
     price: `$${item.price}`,
+    instock: item.instock,
   }));
 
   return <CardCrasoule title="Top Sellers" cards={cards} />;

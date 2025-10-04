@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className=" sticky z-50 top-0 bg-white rounded-lg ">
       <div className="flex justify-between items-center px-2 py-4 ">
         <div className="text-2xl capitalize font-bold text-red-400">
-          Furniture Mart
+          <Link href="/">Furniture Mart</Link>
         </div>
 
         <div className="md:flex hidden  justify-center items-center gap-5 lg:gap-8 text-xl font-semibold">

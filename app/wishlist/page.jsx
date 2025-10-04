@@ -99,10 +99,10 @@ const Page = () => {
                   </span>
                   <span
                     className={`text-xs sm:text-sm font-semibold ${
-                      item.inStock ? "text-green-600" : "text-red-600"
+                      item.instock ? "text-green-600" : "text-red-600"
                     }`}
                   >
-                    {item.inStock ? "In Stock" : "Out of Stock"}
+                    {item.instock ? "In Stock" : "Out of Stock"}
                   </span>
                 </div>
 

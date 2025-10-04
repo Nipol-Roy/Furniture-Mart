@@ -10,6 +10,7 @@ const NewArrivals = () => {
     image: item.image,
     text: item.text,
     price: `$${item.price}`,
+    instock: item.instock,
   }));
 
   return <CardCrasoule title="New Arrivals" cards={cards} />;

@@ -74,6 +74,7 @@ const CardCrasoule = ({ title, cards }) => {
               text={card.text}
               category={card.category}
               price={card.price}
+              instock={card.instock}
             />
           </div>
         ))}
