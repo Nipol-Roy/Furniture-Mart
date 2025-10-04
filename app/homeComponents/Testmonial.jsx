@@ -5,7 +5,7 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import { RxBorderDashed } from "react-icons/rx";
-import data from "../TestmonialData/TestmonialData.Js";
+import data from "../testmonialData/testmonialData";
 
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
