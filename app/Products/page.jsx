@@ -352,7 +352,11 @@ const page = () => {
                           ))}
                         </div>
                         <button
-                          onClick={() => setShowFilter(false)}
+                          onClick={() =>
+                            setShowFilter(false)(
+                              (document.body.style.overflow = "auto")
+                            )
+                          }
                           className="w-full flex justify-center items-center py-3 font-bold text-lg  rounded-lg sticky bg-[#a91f64] text-white bottom-0 left-0"
                         >
                           Apply Filters

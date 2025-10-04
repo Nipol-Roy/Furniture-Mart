@@ -145,6 +145,7 @@ const Testimonial = () => {
                           <Image
                             src={item.image}
                             style={{ objectFit: "cover" }}
+                            alt={item.name}
                           />
                         </div>
                       </div>
