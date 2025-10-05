@@ -5,7 +5,7 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import { RxBorderDashed } from "react-icons/rx";
-import data from "/app/testmonialData/testmonialData";
+import data from "/app/testmonialdata/testmonialdata";
 
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
@@ -125,10 +125,10 @@ const Testimonial = () => {
                     </div>
                   </div>
 
-                  <div className=" text-md bg-gray-200 h-1/2 p-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatem, veniam! Quisquam sit, labore sed, praesentium
-                    sequi dicta deleniti cupiditate
+                  <div className=" text-md lg:text-lg  bg-gray-200 h-1/2 p-5 text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aliquam, vitae at fuga tempore soluta deserunt. Odit, iste!
+                    Ipsam vitae similique exercitationem ut laborum culpa aut.
                   </div>
                 </div>
               ))}
@@ -172,11 +172,11 @@ const Testimonial = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="p-2 lg:p-4 text-[10px] lg:text-md xl:text-lg xl:p-6">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ut, labore! Lorem ipsum dolor, sit amet consectetur
-                      adipisicing elit. Fuga, nesciunt. Lorem ipsum dolor sit
-                      amet. Lorem ipsum dolor sit amet.
+                    <div className="p-2 md:p-6   text-justify text-[10px] lg:text-lg  xl:p-6">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Maiores eaque, mollitia accusantium assumenda neque magni
+                      facilis molestias corporis officia molestiae dignissimos
+                      placeat voluptatem excepturi quod.
                     </div>
                   </div>
                 </div>
