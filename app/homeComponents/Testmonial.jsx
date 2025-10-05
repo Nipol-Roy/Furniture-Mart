@@ -172,7 +172,7 @@ const Testimonial = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="p-2 md:p-6   text-justify text-[10px] lg:text-lg  xl:p-6">
+                    <div className="p-3s md:p-6   text-justify text-[10px] lg:text-lg  xl:p-6">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Maiores eaque, mollitia accusantium assumenda neque magni
                       facilis molestias corporis officia molestiae dignissimos
